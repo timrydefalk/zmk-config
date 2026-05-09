@@ -22,32 +22,19 @@
             require-prior-idle-ms = <120>; /* tune to taste */
         };
 
-        para: para {
+        parenthesis: parenthesis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+
+            label = "PARENTHESIS";
         };
 
-        caps: caps {
-            compatible = "zmk,behavior-caps-word";
+        brackets: brackets {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRACKETS";
             #binding-cells = <0>;
-            continue-list = <MINUS BACKSPACE>;
-        };
-
-        paraless: paraless {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        paragreat: paragreat {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
         };
     };
 
