@@ -127,6 +127,13 @@
 
             label = "COLONS";
         };
+
+        braces: braces {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRACES";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+        };
     };
 
     macros {
@@ -165,30 +172,30 @@
         BASE {
             display-name = "Base";
             bindings = <
-&none  &colons             &kp COMMA           &kp PERIOD       &kp P              &kp Y        &kp F        &kp G              &kp C                &kp R            &kp L            &none
-&none  &hml_ao LEFT_GUI 0  &hml_oe LEFT_ALT 0  &hml_ae LCTRL 0  &hml LEFT_SHIFT U  &kp I        &kp D        &hmr LEFT_SHIFT H  &hmr LEFT_CONTROL T  &hmr LEFT_ALT N  &hmr LEFT_WIN S  &none
-&none  &kp SINGLE_QUOTE    &kp Q               &kp J            &kp K              &kp X        &kp B        &kp M              &kp W                &kp V            &kp Z            &none
-                                               &kp ESCAPE       &mo 1              &kp SPACE    &lt 0 ENTER  &lt 2 SPACE        &kp TAB
+&none  &kp COLON           &kp COMMA           &kp PERIOD       &kp P              &kp Y           &kp F        &kp G              &kp C                &kp R            &kp L            &none
+&none  &hml_ao LEFT_GUI 0  &hml_oe LEFT_ALT 0  &hml_ae LCTRL 0  &hml LEFT_SHIFT U  &kp I           &kp D        &hmr LEFT_SHIFT H  &hmr LEFT_CONTROL T  &hmr LEFT_ALT N  &hmr LEFT_WIN S  &none
+&none  &kp SINGLE_QUOTE    &kp Q               &kp J            &kp K              &kp X           &kp B        &kp M              &kp W                &kp V            &kp Z            &none
+                                               &kp ESCAPE       &lt 1 BACKSPACE    &lt 3 DELETE    &lt 3 ENTER  &lt 2 SPACE        &kp TAB
             >;
         };
 
         NUMBERS {
             display-name = "NavNum";
             bindings = <
-&trans      &kp N1  &kp N2    &kp N3        &kp N4           &kp N5           &kp N6   &kp N7  &kp N8  &kp N9  &kp N0  &trans
-&caps_word  &trans  &trans    &kp UP_ARROW  &browsertab      &kp PAGE_UP      &kp N0   &kp N4  &kp N5  &kp N6  &trans  &trans
-&trans      &trans  &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN    &trans   &kp N1  &kp N2  &kp N3  &trans  &trans
-                              &kp LGUI      &trans           &kp SPACE        &kp RET  &mo 3   &trans
+&trans      &kp N1  &kp N2    &kp N3        &kp N4           &kp N5           &none  &kp N7           &kp N8  &kp N9  &none  &trans
+&caps_word  &trans  &trans    &kp UP_ARROW  &browsertab      &kp PAGE_UP      &none  &kp N4           &kp N5  &kp N6  &none  &trans
+&trans      &trans  &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN    &none  &kp N1           &kp N2  &kp N3  &none  &trans
+                              &none         &trans           &none            &none  &kp KP_NUMBER_0  &none
             >;
         };
 
         SYMBOLS {
             display-name = "Symbols";
             bindings = <
-&trans  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
-&trans  &trans    &trans          &kp UP_ARROW    &trans           &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &trans
-&trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &trans
-                                  &kp LGUI        &mo 3            &kp SPACE    &kp RET    &trans     &trans
+&trans  &kp SEMI   &kp AT          &brackets       &kp SLASH        &kp TILDE    &kp AMPS    &kp QUESTION  &kp POUND  &kp PIPE       &kp PLUS  &trans
+&trans  &kp GRAVE  &kp MINUS       &parenthesis    &braces          &kp EQUAL    &kp EXCL    &kp PERCENT   &kp LBKT   &kp RBKT       &kp STAR  &trans
+&trans  &trans     &kp UNDERSCORE  &kp LEFT_ARROW  &kp RIGHT_ARROW  &kp CARET    &kp DOLLAR  &kp UP_ARROW  &kp DOWN   &kp BACKSLASH  &kp PIPE  &trans
+                                   &kp LGUI        &mo 3            &kp SPACE    &kp RET     &trans        &trans
             >;
         };
 
