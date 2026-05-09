@@ -10,9 +10,7 @@
 #define SYSTEM 3
 #define EXTRA 4
 
-&uc {
-    default-mode = <UC_MODE_LINUX>;
-};
+&uc { default-mode = <UC_MODE_LINUX>; };
 
 / {
     behaviors {
@@ -20,7 +18,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <280>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
             quick-tap-ms = <175>;
@@ -70,7 +68,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <280>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
             quick-tap-ms = <175>;
@@ -84,7 +82,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <280>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&ae>;
 
             quick-tap-ms = <175>;
@@ -98,7 +96,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <280>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&ao>;
 
             quick-tap-ms = <175>;
@@ -112,7 +110,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <280>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&oe>;
 
             quick-tap-ms = <175>;
