@@ -11,8 +11,6 @@
 #define EXTRA 4
 
 &uc {
-    åöä
-
     default-mode = <UC_MODE_LINUX>;
 };
 
