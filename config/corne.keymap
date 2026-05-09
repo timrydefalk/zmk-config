@@ -10,6 +10,10 @@
 #define SYSTEM 3
 #define EXTRA 4
 
+&uc {
+  default-mode = <UC_MODE_LINUX>;
+};
+
 / {
     behaviors {
         hm: homerow_mods {
