@@ -10,7 +10,7 @@
 #define SYSTEM 3
 #define EXTRA 4
 
-&uc {
+&uc {åöä
   default-mode = <UC_MODE_LINUX>;
 };
 
@@ -46,7 +46,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ae";
             #binding-cells = <0>;
-            bindings = <&kp A>, <&uc UC_SV_AE>;
+            bindings = <&kp E>, <&uc UC_SV_AE>;
         };
 
         ao: ao {
@@ -60,7 +60,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "oe";
             #binding-cells = <0>;
-            bindings = <&kp A>, <&uc UC_SV_OE>;
+            bindings = <&kp O>, <&uc UC_SV_OE>;
         };
     };
 
