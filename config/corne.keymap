@@ -10,21 +10,26 @@
 #define SYSTEM 3
 #define EXTRA 4
 
-&uc {åöä
-  default-mode = <UC_MODE_LINUX>;
+&uc {
+    åöä
+
+    default-mode = <UC_MODE_LINUX>;
 };
 
 / {
     behaviors {
-        hm: homerow_mods {
+        hml: hml {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <280>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
 
-            quick-tap-ms = <180>;
-            require-prior-idle-ms = <120>; /* tune to taste */
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>; /* tune to taste */
+            hold-trigger-key-positions = <36 37 38 39 41 40 30 18 6 7 19 31 20 8 32 33 21 9 10 34 22>;
+            hold-trigger-on-release;
+            label = "HML";
         };
 
         parenthesis: parenthesis {
@@ -61,6 +66,20 @@
             label = "oe";
             #binding-cells = <0>;
             bindings = <&kp O>, <&uc UC_SV_OE>;
+        };
+
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <36 37 38 39 41 40 5 17 29 28 16 4 3 27 15 2 14 26 25 13 1>;
+            hold-trigger-on-release;
+            label = "HMR";
         };
     };
 
