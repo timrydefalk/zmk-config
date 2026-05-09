@@ -81,6 +81,56 @@
             hold-trigger-on-release;
             label = "HMR";
         };
+
+        hml_ae: hml_ae {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&ae>;
+
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <36 37 38 39 41 40 30 18 6 7 19 31 20 8 32 33 21 9 10 34 22>;
+            hold-trigger-on-release;
+            label = "HML_AE";
+        };
+
+        hml_ao: hml_ao {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&ao>;
+
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <36 37 38 39 41 40 30 18 6 7 19 31 20 8 32 33 21 9 10 34 22>;
+            hold-trigger-on-release;
+            label = "HML_AO";
+        };
+
+        hml_oe: hml_oe {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&oe>;
+
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <36 37 38 39 41 40 30 18 6 7 19 31 20 8 32 33 21 9 10 34 22>;
+            hold-trigger-on-release;
+            label = "HML_OE";
+        };
+
+        colons: colons {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp SEMI>;
+
+            label = "COLONS";
+        };
     };
 
     macros {
@@ -119,10 +169,10 @@
         BASE {
             display-name = "Base";
             bindings = <
-&none  &kp LS(SEMI)      &kp COMMA  &kp PERIOD  &kp P  &kp Y        &kp F        &kp G        &kp C    &kp R  &kp L  &none
-&none  &ao               &oe        &ae         &kp U  &kp I        &kp D        &kp H        &kp T    &kp N  &kp S  &none
-&none  &kp SINGLE_QUOTE  &kp Q      &kp J       &kp K  &kp X        &kp B        &kp M        &kp W    &kp V  &kp Z  &none
-                                    &kp ESCAPE  &mo 1  &kp SPACE    &lt 0 ENTER  &lt 2 SPACE  &kp TAB
+&none  &colons             &kp COMMA           &kp PERIOD       &kp P              &kp Y        &kp F        &kp G              &kp C                &kp R        &kp L            &none
+&none  &hml_ao LEFT_GUI 0  &hml_oe LEFT_ALT 0  &hml_ae LCTRL 0  &hml U LEFT_SHIFT  &kp I        &kp D        &hmr H LEFT_SHIFT  &hmr T LEFT_CONTROL  &hmr N LALT  &hmr S LEFT_GUI  &none
+&none  &kp SINGLE_QUOTE    &kp Q               &kp J            &kp K              &kp X        &kp B        &kp M              &kp W                &kp V        &kp Z            &none
+                                               &kp ESCAPE       &mo 1              &kp SPACE    &lt 0 ENTER  &lt 2 SPACE        &kp TAB
             >;
         };
 
