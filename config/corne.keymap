@@ -12,6 +12,7 @@
 #define EXTRA 4
 
 &uc { default-mode = <UC_MODE_LINUX>; };
+
 &lt { quick-tap-ms = <150>; };
 
 / {
@@ -113,6 +114,12 @@
             bindings = <&uc UC_SV_AE>;
             key-positions = <21 15>;
         };
+
+        vimcmd {
+            bindings = <&kp COLON>;
+            key-positions = <3 8>;
+            timeout-ms = <30>;
+        };
     };
 
     //
@@ -123,10 +130,10 @@
         BASE {
             display-name = "Base";
             bindings = <
-&none  &kp COLON           &kp COMMA           &kp PERIOD       &kp P              &kp Y           &kp F        &kp G              &kp C                &kp R            &kp L            &none
-&none  &hml LEFT_GUI A  &hml LEFT_ALT O  &hml LCTRL E  &hml LEFT_SHIFT U  &kp I           &kp D        &hmr LEFT_SHIFT H  &hmr LEFT_CONTROL T  &hmr LEFT_ALT N  &hmr LEFT_WIN S  &none
-&none  &kp SINGLE_QUOTE    &kp Q               &kp J            &kp K              &kp X           &kp B        &kp M              &kp W                &kp V            &kp Z            &none
-                                               &kp ESCAPE       &lt 1 BACKSPACE    &lt 3 DELETE    &lt 3 ENTER  &lt 2 SPACE        &kp TAB
+&none  &kp COLON         &kp COMMA        &kp PERIOD    &kp P              &kp Y           &kp F        &kp G              &kp C                &kp R            &kp L            &none
+&none  &hml LEFT_GUI A   &hml LEFT_ALT O  &hml LCTRL E  &hml LEFT_SHIFT U  &kp I           &kp D        &hmr LEFT_SHIFT H  &hmr LEFT_CONTROL T  &hmr LEFT_ALT N  &hmr LEFT_WIN S  &none
+&none  &kp SINGLE_QUOTE  &kp Q            &kp J         &kp K              &kp X           &kp B        &kp M              &kp W                &kp V            &kp Z            &none
+                                          &kp ESCAPE    &lt 1 BACKSPACE    &lt 3 DELETE    &lt 3 ENTER  &lt 2 SPACE        &kp TAB
             >;
         };
 
@@ -153,10 +160,10 @@
         SYSTEM {
             display-name = "System";
             bindings = <
-&trans  &none         &none         &none         &none         &none             &none           &none  &none  &none  &none        &trans
+&trans  &none         &none         &none         &none         &none             &none           &none             &none                   &none             &none        &trans
 &trans  &bootloader   &none         &out OUT_BLE  &out OUT_USB  &studio_unlock    &studio_unlock  &uc UC_SET_LINUX  &uc UC_SET_WIN_COMPOSE  &uc UC_SET_MACOS  &bootloader  &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR    &bt BT_CLR_ALL    &none           &none  &none  &none  &none        &trans
-                                    &none         &none         &trans            &trans          &none  &none
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR    &bt BT_CLR_ALL    &none           &none             &none                   &none             &none        &trans
+                                    &none         &none         &trans            &trans          &none             &none
             >;
         };
 
