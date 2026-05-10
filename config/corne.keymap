@@ -12,6 +12,7 @@
 #define EXTRA 4
 
 &uc { default-mode = <UC_MODE_LINUX>; };
+&lt { quick-tap-ms = <150>; };
 
 / {
     behaviors {
@@ -29,42 +30,6 @@
             label = "HML";
         };
 
-        parenthesis: parenthesis {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
-
-            label = "PARENTHESIS";
-        };
-
-        brackets: brackets {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BRACKETS";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
-        };
-
-        ae: ae {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ae";
-            #binding-cells = <0>;
-            bindings = <&kp E>, <&uc UC_SV_AE>;
-        };
-
-        ao: ao {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ao";
-            #binding-cells = <0>;
-            bindings = <&kp A>, <&uc UC_SV_AO>;
-        };
-
-        oe: oe {
-            compatible = "zmk,behavior-tap-dance";
-            label = "oe";
-            #binding-cells = <0>;
-            bindings = <&kp O>, <&uc UC_SV_OE>;
-        };
-
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -79,54 +44,19 @@
             label = "HMR";
         };
 
-        hml_ae: hml_ae {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            flavor = "balanced";
-            bindings = <&kp>, <&ae>;
-
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            hold-trigger-key-positions = <36 37 38 39 41 40 30 18 6 7 19 31 20 8 32 33 21 9 10 34 22>;
-            hold-trigger-on-release;
-            label = "HML_AE";
-        };
-
-        hml_ao: hml_ao {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            flavor = "balanced";
-            bindings = <&kp>, <&ao>;
-
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            hold-trigger-key-positions = <36 37 38 39 41 40 30 18 6 7 19 31 20 8 32 33 21 9 10 34 22>;
-            hold-trigger-on-release;
-            label = "HML_AO";
-        };
-
-        hml_oe: hml_oe {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            flavor = "balanced";
-            bindings = <&kp>, <&oe>;
-
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            hold-trigger-key-positions = <36 37 38 39 41 40 30 18 6 7 19 31 20 8 32 33 21 9 10 34 22>;
-            hold-trigger-on-release;
-            label = "HML_OE";
-        };
-
-        colons: colons {
+        parenthesis: parenthesis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&kp LS(SEMI)>, <&kp SEMI>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
 
-            label = "COLONS";
+            label = "PARENTHESIS";
+        };
+
+        brackets: brackets {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRACKETS";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
         };
 
         braces: braces {
@@ -163,6 +93,21 @@
             bindings = <&kp KP_DIVIDE>;
             key-positions = <16 19>;
         };
+
+        ao {
+            bindings = <&uc UC_SV_AO>;
+            key-positions = <21 13>;
+        };
+
+        oe {
+            bindings = <&uc UC_SV_OE>;
+            key-positions = <21 14>;
+        };
+
+        ae {
+            bindings = <&uc UC_SV_AE>;
+            key-positions = <21 15>;
+        };
     };
 
     //
@@ -174,7 +119,7 @@
             display-name = "Base";
             bindings = <
 &none  &kp COLON           &kp COMMA           &kp PERIOD       &kp P              &kp Y           &kp F        &kp G              &kp C                &kp R            &kp L            &none
-&none  &hml_ao LEFT_GUI 0  &hml_oe LEFT_ALT 0  &hml_ae LCTRL 0  &hml LEFT_SHIFT U  &kp I           &kp D        &hmr LEFT_SHIFT H  &hmr LEFT_CONTROL T  &hmr LEFT_ALT N  &hmr LEFT_WIN S  &none
+&none  &hml LEFT_GUI 0  &hml LEFT_ALT 0  &hml LCTRL 0  &hml LEFT_SHIFT U  &kp I           &kp D        &hmr LEFT_SHIFT H  &hmr LEFT_CONTROL T  &hmr LEFT_ALT N  &hmr LEFT_WIN S  &none
 &none  &kp SINGLE_QUOTE    &kp Q               &kp J            &kp K              &kp X           &kp B        &kp M              &kp W                &kp V            &kp Z            &none
                                                &kp ESCAPE       &lt 1 BACKSPACE    &lt 3 DELETE    &lt 3 ENTER  &lt 2 SPACE        &kp TAB
             >;
