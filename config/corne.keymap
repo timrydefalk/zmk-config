@@ -66,6 +66,13 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
         };
+
+        entercaps: entercaps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ENTERCAPS";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER>, <&caps_word>;
+        };
     };
 
     macros {
