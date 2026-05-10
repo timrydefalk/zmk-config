@@ -85,26 +85,31 @@
         compatible = "zmk,combos";
 
         escape {
+            timeout-ms = <30>;
             bindings = <&kp ESCAPE>;
             key-positions = <20 15>;
         };
 
         vimfind {
+            timeout-ms = <30>;
             bindings = <&kp KP_DIVIDE>;
             key-positions = <16 19>;
         };
 
         ao {
+            timeout-ms = <30>;
             bindings = <&uc UC_SV_AO>;
             key-positions = <21 13>;
         };
 
         oe {
+            timeout-ms = <30>;
             bindings = <&uc UC_SV_OE>;
             key-positions = <21 14>;
         };
 
         ae {
+            timeout-ms = <30>;
             bindings = <&uc UC_SV_AE>;
             key-positions = <21 15>;
         };
