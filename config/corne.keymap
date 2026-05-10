@@ -119,7 +119,7 @@
             display-name = "Base";
             bindings = <
 &none  &kp COLON           &kp COMMA           &kp PERIOD       &kp P              &kp Y           &kp F        &kp G              &kp C                &kp R            &kp L            &none
-&none  &hml LEFT_GUI 0  &hml LEFT_ALT 0  &hml LCTRL 0  &hml LEFT_SHIFT U  &kp I           &kp D        &hmr LEFT_SHIFT H  &hmr LEFT_CONTROL T  &hmr LEFT_ALT N  &hmr LEFT_WIN S  &none
+&none  &hml LEFT_GUI A  &hml LEFT_ALT O  &hml LCTRL E  &hml LEFT_SHIFT U  &kp I           &kp D        &hmr LEFT_SHIFT H  &hmr LEFT_CONTROL T  &hmr LEFT_ALT N  &hmr LEFT_WIN S  &none
 &none  &kp SINGLE_QUOTE    &kp Q               &kp J            &kp K              &kp X           &kp B        &kp M              &kp W                &kp V            &kp Z            &none
                                                &kp ESCAPE       &lt 1 BACKSPACE    &lt 3 DELETE    &lt 3 ENTER  &lt 2 SPACE        &kp TAB
             >;
