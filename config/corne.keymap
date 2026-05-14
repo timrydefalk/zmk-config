@@ -107,19 +107,19 @@
         ao {
             timeout-ms = <30>;
             bindings = <&uc UC_SV_AO>;
-            key-positions = <21 13>;
+            key-positions = <13 22>;
         };
 
         oe {
             timeout-ms = <30>;
             bindings = <&uc UC_SV_OE>;
-            key-positions = <21 14>;
+            key-positions = <14 22>;
         };
 
         ae {
             timeout-ms = <30>;
             bindings = <&uc UC_SV_AE>;
-            key-positions = <21 15>;
+            key-positions = <15 22>;
         };
 
         vimcmd {
