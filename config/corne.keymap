@@ -127,6 +127,11 @@
             key-positions = <3 8>;
             timeout-ms = <30>;
         };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <14 21>;
+        };
     };
 
     keymap {
