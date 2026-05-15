@@ -9,14 +9,24 @@
 #define NUMBERS 1
 #define SYMBOLS 2
 #define SYSTEM 3
-#define EXTRA 4
+#define NAV 4
+#define EXTRA 5
+#define EXTRA2 6
 
 &uc { default-mode = <UC_MODE_LINUX>; };
-
 &lt { quick-tap-ms = <150>; };
 
 / {
     behaviors {
+        caps_lt: caps_lt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CAPS_LT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&entercaps>;
+        };
+
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -143,12 +153,12 @@
 &none  &kp COLON         &kp COMMA        &kp PERIOD    &kp P              &kp Y           &kp F        &kp G              &kp C                &kp R            &kp L            &none
 &none  &hml LEFT_GUI A   &hml LEFT_ALT O  &hml LCTRL E  &hml LEFT_SHIFT U  &kp I           &kp D        &hmr LEFT_SHIFT H  &hmr LEFT_CONTROL T  &hmr LEFT_ALT N  &hmr LEFT_WIN S  &none
 &none  &kp SINGLE_QUOTE  &kp Q            &kp J         &kp K              &kp X           &kp B        &kp M              &kp W                &kp V            &kp Z            &none
-                                          &kp ESCAPE    &lt 1 BACKSPACE    &lt 3 DELETE    &lt 3 ENTER  &lt 2 SPACE        &kp TAB
+                                          &lt 3 ESCAPE    &lt 1 BACKSPACE    &lt 4 DELETE    &caps_lt 4 0  &lt 2 SPACE     &lt 3 TAB
             >;
         };
 
         NUMBERS {
-            display-name = "NavNum";
+            display-name = "Num";
             bindings = <
 &trans  &none  &none  &none  &none   &none    &none  &kp N7  &kp N8  &kp N9  &none  &trans
 &trans  &none  &none  &none  &none   &none    &none  &kp N4  &kp N5  &kp N6  &none  &trans
@@ -177,8 +187,28 @@
             >;
         };
 
+        NAV {
+            display-name = "Nav";
+            bindings = <
+&trans  &trans  &trans          &trans          &trans           &msc SCRL_UP      &trans  &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans          &mmv MOVE_UP    &trans           &msc SCRL_DOWN    &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans            &trans  &trans     &trans     &trans  &trans  &trans
+                                &trans          &trans           &trans            &trans  &trans     &trans
+            >;
+        };
+
         EXTRA {
             display-name = "Extra";
+            bindings = <
+&trans  &trans  &trans          &trans          &trans           &msc SCRL_UP      &trans  &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans          &mmv MOVE_UP    &trans           &msc SCRL_DOWN    &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans            &trans  &trans     &trans     &trans  &trans  &trans
+                                &trans          &trans           &trans            &trans  &trans     &trans
+            >;
+        };
+
+        EXTRA2 {
+            display-name = "Extra2";
             bindings = <
 &trans  &trans  &trans          &trans          &trans           &msc SCRL_UP      &trans  &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans          &mmv MOVE_UP    &trans           &msc SCRL_DOWN    &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
