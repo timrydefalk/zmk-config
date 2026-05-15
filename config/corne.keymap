@@ -207,9 +207,9 @@
         NAV {
             display-name = "Nav";
             bindings = <
-&trans  &trans    &trans        &trans     &trans     &trans    &trans  &sk LSHFT       &caps_word    &trans    &trans     &trans
-&trans  &kp LWIN  &kp LEFT_ALT  &kp LCTRL  &kp LSHFT  &trans    &trans  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN  &kp RIGHT  &trans
-&trans  &trans    &trans        &trans     &trans     &trans    &trans  &trans          &trans        &trans    &trans     &trans
+&trans  &trans    &trans        &trans     &trans     &trans    &trans  &sk LSHFT       &caps_word    &key_repeat    &browsertab  &trans
+&trans  &kp LWIN  &kp LEFT_ALT  &kp LCTRL  &kp LSHFT  &trans    &trans  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT    &trans
+&trans  &trans    &trans        &trans     &trans     &trans    &trans  &trans          &kp PAGE_UP   &kp PAGE_DOWN  &trans       &trans
                                 &none      &none      &trans    &trans  &trans          &trans
             >;
         };
