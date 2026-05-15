@@ -170,7 +170,7 @@
 &none  &kp COLON         &kp COMMA        &kp PERIOD    &kp P              &kp Y           &kp F         &kp G              &kp C                &kp R            &kp L            &none
 &none  &hml LEFT_GUI A   &hml LEFT_ALT O  &hml LCTRL E  &hml LEFT_SHIFT U  &kp I           &kp D         &hmr LEFT_SHIFT H  &hmr LEFT_CONTROL T  &hmr LEFT_ALT N  &hmr LEFT_WIN S  &none
 &none  &kp SINGLE_QUOTE  &kp Q            &kp J         &kp K              &kp X           &kp B         &kp M              &kp W                &kp V            &kp Z            &none
-                                          &lt 5 ESCAPE  &lt 1 BACKSPACE    &lt 3 DELETE    &caps_lt 4 0  &lt 2 SPACE        &lt 6 TAB
+                                          &lt 6 ESCAPE  &lt 1 BACKSPACE    &lt 3 DELETE    &caps_lt 4 0  &lt 2 SPACE        &lt 5 TAB
             >;
         };
 
@@ -217,9 +217,9 @@
         EXTRA {
             display-name = "Extra";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &uc UC_LATIN_LETTER_A_WITH_ACUTE  &uc UC_LATIN_LETTER_O_WITH_ACUTE  &uc UC_LATIN_LETTER_E_WITH_ACUTE  &uc UC_LATIN_LETTER_U_WITH_ACUTE  &uc UC_LATIN_LETTER_Ih_WITH_ACUTE   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &uc UC_SV_AO                      &uc UC_SV_OE                      &uc UC_SV_AE                      &trans                            &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &uc UC_LATIN_LETTER_A_WITH_GRAVE  &uc UC_LATIN_LETTER_O_WITH_GRAVE  &uc UC_LATIN_LETTER_E_WITH_GRAVE  &uc UC_LATIN_LETTER_U_WITH_GRAVE  &uc UC_LATIN_LETTER_I_WITH_GRAVE    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &none   &none     &trans  &trans  &trans
             >;
         };
