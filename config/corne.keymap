@@ -177,20 +177,20 @@
         NUMBERS {
             display-name = "Num";
             bindings = <
-&trans  &trans     &trans        &trans     &trans      &trans    &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp KP_DIVIDE  &trans
+&trans  &trans    &trans        &trans     &trans     &trans    &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp KP_DIVIDE  &trans
 &trans  &kp LGUI  &kp LEFT_ALT  &kp LCTRL  &kp LSHFT  &trans    &kp EQUAL        &kp N4  &kp N5  &kp N6  &kp PLUS       &trans
-&trans  &trans     &trans         &trans      &trans      &trans    &kp N0           &kp N1  &kp N2  &kp N3  &kp MINUS      &trans
-                                &none      &trans     &none    &trans           &trans  &trans
+&trans  &trans    &trans        &trans     &trans     &trans    &kp N0           &kp N1  &kp N2  &kp N3  &kp MINUS      &trans
+                                &none      &trans     &none     &trans           &trans  &trans
             >;
         };
 
         SYMBOLS {
             display-name = "Symbols";
             bindings = <
-&trans  &kp SEMI     &kp AT          &brackets     &slashes       &kp TILDE     &trans  &trans      &trans      &trans     &trans     &trans
+&trans  &kp SEMI     &kp AT          &brackets     &slashes       &kp TILDE     &trans  &trans     &trans     &trans    &trans    &trans
 &trans  &kp GRAVE    &kp MINUS       &parenthesis  &marks         &kp EQUAL     &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LWIN  &trans
-&trans  &kp PERCENT  &kp UNDERSCORE  &braces       &kp AMPERSAND  &kp POUND     &trans  &trans      &trans      &trans     &trans     &trans
-                                     &kp CARET     &kp PIPE       &kp DOLLAR    &none  &trans     &none
+&trans  &kp PERCENT  &kp UNDERSCORE  &braces       &kp AMPERSAND  &kp POUND     &trans  &trans     &trans     &trans    &trans    &trans
+                                     &kp CARET     &kp PIPE       &kp DOLLAR    &none   &trans     &none
             >;
         };
 
@@ -227,10 +227,10 @@
         SYSTEM {
             display-name = "System";
             bindings = <
-&trans  &trans         &trans         &trans         &trans         &trans             &trans           &trans             &trans                   &trans             &trans        &trans
-&trans  &bootloader   &trans         &out OUT_BLE  &out OUT_USB  &studio_unlock    &studio_unlock  &uc UC_SET_LINUX  &uc UC_SET_WIN_COMPOSE  &uc UC_SET_MACOS  &bootloader  &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR    &bt BT_CLR_ALL    &trans           &trans             &trans                   &trans             &trans        &trans
-                                    &trans        &none         &trans            &trans          &none             &trans
+&trans  &trans        &trans        &trans        &trans        &trans            &trans          &trans            &trans                  &trans            &trans       &trans
+&trans  &bootloader   &trans        &out OUT_BLE  &out OUT_USB  &studio_unlock    &studio_unlock  &uc UC_SET_LINUX  &uc UC_SET_WIN_COMPOSE  &uc UC_SET_MACOS  &bootloader  &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR    &bt BT_CLR_ALL    &trans          &trans            &trans                  &trans            &trans       &trans
+                                    &none         &none         &none             &none           &none             &trans
             >;
         };
     };
