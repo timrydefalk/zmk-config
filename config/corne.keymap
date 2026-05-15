@@ -205,7 +205,7 @@
         };
 
         MOUSE {
-            display-name = "Extra";
+            display-name = "Mouse";
             bindings = <
 &trans  &mmv MOVE_X(-100)  &mmv MOVE_Y(-100)  &mmv MOVE_Y(100)  &mmv MOVE_X(100)  &trans       &trans  &trans     &trans     &trans        &trans        &trans
 &trans  &mmv MOVE_LEFT     &mmv MOVE_DOWN     &mmv MOVE_UP      &mmv MOVE_RIGHT   &trans       &trans  &kp LSHFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &trans
@@ -215,7 +215,7 @@
         };
 
         EXTRA {
-            display-name = "Extra2";
+            display-name = "Extra";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
