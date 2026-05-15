@@ -183,10 +183,10 @@
         EXTRA {
             display-name = "Extra";
             bindings = <
-&trans  &uc UC_LATIN_LETTER_A_WITH_ACUTE  &uc UC_LATIN_LETTER_O_WITH_ACUTE  &uc UC_LATIN_LETTER_E_WITH_ACUTE  &uc UC_LATIN_LETTER_U_WITH_ACUTE  &uc UC_LATIN_LETTER_Ih_WITH_ACUTE    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &uc UC_SV_AO                      &uc UC_SV_OE                      &uc UC_SV_AE                      &trans                            &trans                               &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &uc UC_LATIN_LETTER_A_WITH_GRAVE  &uc UC_LATIN_LETTER_O_WITH_GRAVE  &uc UC_LATIN_LETTER_E_WITH_GRAVE  &uc UC_LATIN_LETTER_U_WITH_GRAVE  &uc UC_LATIN_LETTER_I_WITH_GRAVE     &trans  &trans  &trans  &trans  &trans  &trans
-                                                                            &trans                            &none                             &none                                &trans  &trans  &trans
+&trans  &uc UC_LATIN_LETTER_A_WITH_ACUTE  &uc UC_LATIN_LETTER_O_WITH_ACUTE  &uc UC_LATIN_LETTER_E_WITH_ACUTE  &uc UC_LATIN_LETTER_U_WITH_ACUTE  &uc UC_LATIN_LETTER_Ih_WITH_ACUTE    &trans  &trans     &trans     &trans        &trans        &trans
+&trans  &uc UC_SV_AO                      &uc UC_SV_OE                      &uc UC_SV_AE                      &trans                            &trans                               &trans  &kp LSHFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &trans
+&trans  &uc UC_LATIN_LETTER_A_WITH_GRAVE  &uc UC_LATIN_LETTER_O_WITH_GRAVE  &uc UC_LATIN_LETTER_E_WITH_GRAVE  &uc UC_LATIN_LETTER_U_WITH_GRAVE  &uc UC_LATIN_LETTER_I_WITH_GRAVE     &trans  &trans     &trans     &trans        &trans        &trans
+                                                                            &trans                            &trans                            &trans                               &none   &none      &trans
             >;
         };
 
