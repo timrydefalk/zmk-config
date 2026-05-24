@@ -6,7 +6,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #include <zmk-unicode/keys/blocks/latin_1_supplement.h>
-#include <zmk-helpers/key-labels/42.h>
 
 #define BASE 0
 #define NUMBERS 1
@@ -16,8 +15,8 @@
 #define EXTRA 5
 #define SYSTEM 6
 
-#define HAND_RIGHT_KEYS KEYS_R THUMBS_R
-#define HAND_LEFT_KEYS KEYS_L THUMBS_L
+#define HAND_RIGHT_KEYS 39 41 40 30 18 6 7 19 31 20 8 32 33 21 9 10 34 22
+#define HAND_LEFT_KEYS 36 37 38 5 17 29 28 16 4 3 27 15 2 14 26 25 13 1
 
 #define BASE_TIME 150
 #define REPEAT_DECAY (BASE_TIME + 150)

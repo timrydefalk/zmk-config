@@ -12,8 +12,6 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
-    - name: zmk-helpers
-      remote: urob
     - name: zmk-unicode
       remote: urob
   self:
