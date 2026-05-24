@@ -6,6 +6,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #include <zmk-unicode/keys/blocks/latin_1_supplement.h>
+#include <zmk-helpers/key-labels/42.h>
 
 #define BASE 0
 #define NUMBERS 1
@@ -15,44 +16,147 @@
 #define EXTRA 5
 #define SYSTEM 6
 
+#define HAND_RIGHT_KEYS KEYS_R THUMBS_R
+#define HAND_LEFT_KEYS KEYS_L THUMBS_L
+
+#define BASE_TIME 150
+#define REPEAT_DECAY (BASE_TIME + 150)
+#define STREAK_DECAY BASE_TIME
+#define INDEX_HOLDING_TIME (BASE_TIME + 30)
+#define MIDDY_HOLDING_TIME (BASE_TIME + 60)
+#define RINGY_HOLDING_TIME (BASE_TIME + 90)
+#define PINKY_HOLDING_TIME (BASE_TIME + 120)
+
 &uc { default-mode = <UC_MODE_LINUX>; };
 
 &lt { quick-tap-ms = <150>; };
 
 / {
     behaviors {
-        hml: hml {
+        hrm_left_pinky: hrm_left_pinky {
             compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            flavor = "balanced";
+
+            tapping-term-ms = <PINKY_HOLDING_TIME>;
+            quick-tap-ms = <REPEAT_DECAY>;
+            require-prior-idle-ms = <STREAK_DECAY>;
+
             bindings = <&kp>, <&kp>;
 
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>; /* tune to taste */
-            hold-trigger-key-positions = <36 37 38 39 41 40 30 18 6 7 19 31 20 8 32 33 21 9 10 34 22>;
+            hold-trigger-key-positions = <HAND_RIGHT_KEYS>;
             hold-trigger-on-release;
-            label = "HML";
         };
 
-        hmr: hmr {
+        hrm_left_ringy: hrm_left_ringy {
             compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            flavor = "balanced";
+
+            tapping-term-ms = <RINGY_HOLDING_TIME>;
+            quick-tap-ms = <REPEAT_DECAY>;
+            require-prior-idle-ms = <STREAK_DECAY>;
+
             bindings = <&kp>, <&kp>;
 
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            hold-trigger-key-positions = <36 37 38 39 41 40 5 17 29 28 16 4 3 27 15 2 14 26 25 13 1>;
+            hold-trigger-key-positions = <HAND_RIGHT_KEYS>;
             hold-trigger-on-release;
-            label = "HMR";
+        };
+
+        hrm_left_middy: hrm_left_middy {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            #binding-cells = <2>;
+
+            tapping-term-ms = <MIDDY_HOLDING_TIME>;
+            quick-tap-ms = <REPEAT_DECAY>;
+            require-prior-idle-ms = <STREAK_DECAY>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <HAND_RIGHT_KEYS>;
+            hold-trigger-on-release;
+        };
+
+        hrm_left_index: hrm_left_index {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            #binding-cells = <2>;
+
+            tapping-term-ms = <INDEX_HOLDING_TIME>;
+            quick-tap-ms = <REPEAT_DECAY>;
+            require-prior-idle-ms = <STREAK_DECAY>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <HAND_RIGHT_KEYS>;
+            hold-trigger-on-release;
+        };
+
+        hrm_right_pinky: hrm_right_pinky {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            #binding-cells = <2>;
+
+            tapping-term-ms = <PINKY_HOLDING_TIME>;
+            quick-tap-ms = <REPEAT_DECAY>;
+            require-prior-idle-ms = <STREAK_DECAY>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <HAND_LEFT_KEYS>;
+            hold-trigger-on-release;
+        };
+
+        hrm_right_ringy: hrm_right_ringy {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            #binding-cells = <2>;
+
+            tapping-term-ms = <RINGY_HOLDING_TIME>;
+            quick-tap-ms = <REPEAT_DECAY>;
+            require-prior-idle-ms = <STREAK_DECAY>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <HAND_LEFT_KEYS>;
+            hold-trigger-on-release;
+        };
+
+        hrm_right_middy: hrm_right_middy {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            #binding-cells = <2>;
+
+            tapping-term-ms = <MIDDY_HOLDING_TIME>;
+            quick-tap-ms = <REPEAT_DECAY>;
+            require-prior-idle-ms = <STREAK_DECAY>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <HAND_LEFT_KEYS>;
+            hold-trigger-on-release;
+        };
+
+        hrm_right_index: hrm_right_index {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            #binding-cells = <2>;
+
+            tapping-term-ms = <INDEX_HOLDING_TIME>;
+            quick-tap-ms = <REPEAT_DECAY>;
+            require-prior-idle-ms = <STREAK_DECAY>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <HAND_LEFT_KEYS>;
+            hold-trigger-on-release;
         };
 
         parenthesis: parenthesis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp LEFT_PARENTHESIS>;
 
             label = "PARENTHESIS";
         };
@@ -61,14 +165,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BRACKETS";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+            bindings = <&kp LEFT_BRACKET>, <&kp LEFT_BRACKET>;
         };
 
         braces: braces {
             compatible = "zmk,behavior-tap-dance";
             label = "BRACES";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+            bindings = <&kp LEFT_BRACE>, <&kp LEFT_BRACE>;
         };
 
         slashes: slashes {
@@ -135,10 +239,10 @@
         BASE {
             display-name = "Base";
             bindings = <
-&none  &kp COLON         &kp COMMA        &kp PERIOD    &kp P              &kp Y           &kp F        &kp G              &kp C                &kp R            &kp L            &none
-&none  &hml LEFT_GUI A   &hml LEFT_ALT O  &hml LCTRL E  &hml LEFT_SHIFT U  &kp I           &kp D        &hmr LEFT_SHIFT H  &hmr LEFT_CONTROL T  &hmr LEFT_ALT N  &hmr LEFT_WIN S  &none
-&none  &kp SINGLE_QUOTE  &kp Q            &kp J         &kp K              &kp X           &kp B        &kp M              &kp W                &kp V            &kp Z            &none
-                                          &lt 6 ESCAPE  &lt 1 BACKSPACE    &lt 3 DELETE    &lt 4 ENTER  &lt 2 SPACE        &lt 5 TAB
+&none  &kp COLON                    &kp COMMA                   &kp PERIOD               &kp P                         &kp Y           &kp F        &kp G                          &kp C                            &kp R                        &kp L                        &none
+&none  &hrm_left_pinky LEFT_GUI A   &hrm_left_ringy LEFT_ALT O  &hrm_left_middy LCTRL E  &hrm_left_index LEFT_SHIFT U  &kp I           &kp D        &hrm_right_index LEFT_SHIFT H  &hrm_right_middy LEFT_CONTROL T  &hrm_right_ringy LEFT_ALT N  &hrm_right_pinky LEFT_WIN S  &none
+&none  &kp SINGLE_QUOTE             &kp Q                       &kp J                    &kp K                         &kp X           &kp B        &kp M                          &kp W                            &kp V                        &kp Z                        &none
+                                                                                      &lt 6 ESCAPE  &lt 1 BACKSPACE    &lt 3 DELETE    &lt 4 ENTER  &lt 2 SPACE        &lt 5 TAB
             >;
         };
 
@@ -166,7 +270,7 @@
             display-name = "Nav";
             bindings = <
 &trans  &trans    &trans        &trans     &trans     &trans    &trans  &sk LSHFT       &caps_word    &key_repeat    &browsertab  &trans
-&trans  &kp LWIN  &kp LEFT_ALT  &kp LCTRL  &kp LSHFT  &trans    &trans  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT    &trans
+&trans  &kp LWIN  &kp LEFT_ALT  &kp LCTRL  &kp LSHFT  &trans    &trans  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp LEFT    &trans
 &trans  &trans    &trans        &trans     &trans     &trans    &trans  &trans          &kp PAGE_UP   &kp PAGE_DOWN  &trans       &trans
                                 &none      &none      &trans    &trans  &trans          &trans
             >;
@@ -176,8 +280,8 @@
             display-name = "Mouse";
             bindings = <
 &trans  &mmv MOVE_X(-100)  &mmv MOVE_Y(-100)  &mmv MOVE_Y(100)  &mmv MOVE_X(100)  &trans       &trans  &trans     &trans     &trans        &trans        &trans
-&trans  &mmv MOVE_LEFT     &mmv MOVE_DOWN     &mmv MOVE_UP      &mmv MOVE_RIGHT   &trans       &trans  &kp LSHFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &trans
-&trans  &msc SCRL_LEFT     &msc SCRL_DOWN     &msc SCRL_UP      &msc SCRL_RIGHT   &trans       &trans  &trans     &trans     &trans        &trans        &trans
+&trans  &mmv MOVE_LEFT     &mmv MOVE_DOWN     &mmv MOVE_UP      &mmv MOVE_LEFT   &trans       &trans  &kp LSHFT  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &trans
+&trans  &msc SCRL_LEFT     &msc SCRL_DOWN     &msc SCRL_UP      &msc SCRL_LEFT   &trans       &trans  &trans     &trans     &trans        &trans        &trans
                                               &mkp MCLK         &mkp RCLK         &mkp LCLK    &trans  &none      &none
             >;
         };
