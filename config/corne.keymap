@@ -165,7 +165,7 @@
         parenthesis: parenthesis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LEFT_PARENTHESIS>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
 
             label = "PARENTHESIS";
         };
@@ -174,14 +174,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BRACKETS";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACKET>, <&kp LEFT_BRACKET>;
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
         };
 
         braces: braces {
             compatible = "zmk,behavior-tap-dance";
             label = "BRACES";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACE>, <&kp LEFT_BRACE>;
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
         };
 
         slashes: slashes {
@@ -279,7 +279,7 @@
             display-name = "Nav";
             bindings = <
 &trans  &trans    &trans        &trans     &trans     &trans    &trans  &sk LSHFT       &caps_word    &key_repeat    &browsertab  &trans
-&trans  &kp LWIN  &kp LEFT_ALT  &kp LCTRL  &kp LSHFT  &trans    &trans  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp LEFT    &trans
+&trans  &kp LWIN  &kp LEFT_ALT  &kp LCTRL  &kp LSHFT  &trans    &trans  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW       &kp RIGHT_ARROW    &trans
 &trans  &trans    &trans        &trans     &trans     &trans    &trans  &trans          &kp PAGE_UP   &kp PAGE_DOWN  &trans       &trans
                                 &none      &none      &trans    &trans  &trans          &trans
             >;
